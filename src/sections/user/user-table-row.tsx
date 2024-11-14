@@ -10,6 +10,7 @@ import TableCell from '@mui/material/TableCell';
 import IconButton from '@mui/material/IconButton';
 import MenuItem, { menuItemClasses } from '@mui/material/MenuItem';
 import { Iconify } from 'src/components/iconify';
+import CircularProgress from '@mui/material/CircularProgress';
 
 // ----------------------------------------------------------------------
 
@@ -40,6 +41,7 @@ type UserTableRowProps = {
 
 export function UserTableRow({ row, selected, onSelectRow, onDelete, onEdit }: UserTableRowProps) {
   const [openPopover, setOpenPopover] = useState<HTMLButtonElement | null>(null);
+  const [loading, setLoading] = useState(false);
 
   const handleOpenPopover = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
     setOpenPopover(event.currentTarget);
@@ -51,11 +53,13 @@ export function UserTableRow({ row, selected, onSelectRow, onDelete, onEdit }: U
 
   const handleDelete = useCallback(() => {
     onDelete();
+    setLoading(true);
     handleClosePopover();
   }, [onDelete, handleClosePopover]);
 
   const handleEdit = useCallback(() => {
     onEdit();
+    setLoading(true);
     handleClosePopover();
   }, [onEdit, handleClosePopover]);
 
@@ -111,7 +115,7 @@ export function UserTableRow({ row, selected, onSelectRow, onDelete, onEdit }: U
           </MenuItem>
           <MenuItem onClick={handleDelete} sx={{ color: 'error.main' }}>
             <Iconify icon="solar:trash-bin-trash-bold" />
-            Deletar
+            {loading ? <CircularProgress size={24} /> : 'Deletar'}
           </MenuItem>
         </MenuList>
       </Popover>

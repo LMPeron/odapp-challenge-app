@@ -24,6 +24,7 @@ import { UserTableToolbar } from '../user-table-toolbar';
 import { emptyRows } from '../utils';
 import type { PatientProps } from '../user-table-row';
 import PatientService from '../../../service/PatientService';
+import CircularProgress from '@mui/material/CircularProgress';
 
 // ----------------------------------------------------------------------
 
@@ -80,6 +81,7 @@ export function UserView() {
   };
 
   const handleConfirmDelete = async () => {
+    setLoading(true);
     if (isDeleteBulk) {
       try {
         const patientService = new PatientService();
@@ -104,6 +106,7 @@ export function UserView() {
         handleCloseDeleteModal();
       }
     }
+    setLoading(false);
   };
 
   const handleDeleteSelected = () => {
@@ -227,8 +230,13 @@ export function UserView() {
           <Button onClick={handleCloseDeleteModal} color="primary">
             Cancelar
           </Button>
-          <Button onClick={handleConfirmDelete} color="error" variant="contained">
-            Deletar
+          <Button
+            onClick={handleConfirmDelete}
+            color="error"
+            variant="contained"
+            disabled={loading}
+          >
+            {loading ? <CircularProgress size={24} sx={{ color: 'white' }} /> : 'Deletar'}
           </Button>
         </DialogActions>
       </Dialog>
