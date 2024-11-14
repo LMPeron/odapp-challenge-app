@@ -90,6 +90,7 @@ export function RegisterPatientView() {
     if (!formData.age) newErrors.age = 'Idade é obrigatória';
     else if (!Number.isInteger(Number(formData.age)) || Number(formData.age) <= 0)
       newErrors.age = 'Idade deve ser um número inteiro positivo';
+    else if (Number(formData.age) > 120) newErrors.age = 'Idade máxima é 120 anos';
     if (!formData.state) newErrors.state = 'Estado é obrigatório';
     if (!formData.city) newErrors.city = 'Cidade é obrigatória';
     setErrors(newErrors);
