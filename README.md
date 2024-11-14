@@ -1,48 +1,85 @@
-## Minimal UI ([Free version](https://free.minimals.cc/))
+# Sistema de Gerenciamento de Pacientes Frontend
 
-![license](https://img.shields.io/badge/license-MIT-blue.svg)
+## Visão Geral
 
-![preview](public/assets/images/minimal-free-preview.jpg)
+Este é um aplicativo frontend baseado em React para gerenciar informações de pacientes como teste técnico para a vaga de desenvolvedor na empresa Odapp.
 
-> Free React Admin Dashboard made with Material-UI components and React + Vite.js.
+## Recursos
 
-## Pages
+- Lista de Pacientes: Visualize uma lista abrangente de todos os pacientes.
+- Adicionar Novo Paciente: Preencha um formulário para adicionar um novo paciente ao sistema.
+- Editar Paciente: Atualize as informações de pacientes existentes.
+- Autenticação de Usuário: Sistema de login seguro para proteger dados sensíveis.
+- Rotas Protegidas: Certas páginas são acessíveis apenas a usuários autenticados.
+- Página 404: Página de erro amigável para rotas indefinidas.
+- Design Responsivo: Componentes de UI compatíveis com dispositivos móveis.
 
-- [Dashboard](https://free.minimals.cc/)
-- [Users](https://free.minimals.cc/user)
-- [Products](https://free.minimals.cc/products)
-- [Blog](https://free.minimals.cc/blog)
-- [Sign in](https://free.minimals.cc/sign-in)
-- [Not found](https://free.minimals.cc/404)
+## Tecnologias Utilizadas
 
-## Quick start
+- React: Biblioteca para construir interfaces de usuário.
+- React Router DOM: Roteamento declarativo para aplicativos React.
+- Material UI (MUI): Componentes React que implementam o Material Design do Google.
+- JavaScript (ES6+): Recursos modernos do JavaScript.
+- CSS-in-JS: Estilização de componentes usando JavaScript.
 
-- Clone the repo: `git clone https://github.com/minimal-ui-kit/material-kit-react.git`
-- Recommended: `Node.js v20.x`
-- **Install:** `npm i` or `yarn install`
-- **Start:** `npm run dev` or `yarn dev`
-- **Build:** `npm run build` or `yarn build`
-- Open browser: `http://localhost:3039`
+## Começando
 
-## Upgrade to PRO Version
+### Pré-requisitos
 
-| Minimal Free                | [Minimal Pro](https://material-ui.com/store/items/minimal-dashboard/)                                   |
-| :-------------------------- | :------------------------------------------------------------------------------------------------------ |
-| **6** Pages                 | **70+** Pages                                                                                           |
-| **Partial** theme customize | **Fully** theme customize                                                                               |
-| -                           | **Next.js** version                                                                                     |
-| -                           | **TypeScript** version (Standard Plus and Extended license)                                             |
-| -                           | Design **Figma** file (Standard Plus and Extended license)                                              |
-| -                           | Authentication with **Amplify**, **Auth0**, **JWT**, **Firebase** and **Supabase**                      |
-| -                           | Light/dark mode, right-to-left, form validation... ([+more components](https://minimals.cc/components)) |
-| -                           | Complete users flows                                                                                    |
-| -                           | 1 year of free updates / 6 months of technical support                                                  |
-| -                           | Learn more: [Package & license](https://docs.minimals.cc/package)                                       |
+- Node.js (versão 20 ou superior)
+- Gerenciador de pacotes npm ou yarn
 
-## License
+### Instalação
 
-Distributed under the [MIT](https://github.com/minimal-ui-kit/minimal.free/blob/main/LICENSE.md) license.
+- Clone o repositório
 
-## Contact us
+```bash
+git clone https://github.com/LMPeron/odapp-challenge-app.git
+cd odapp-challenge-app
+```
 
-Email: support@minimals.cc
+- Instale as dependências
+
+```bash
+yarn
+```
+
+### Executando o Aplicativo
+
+- Inicie o servidor de desenvolvimento
+
+```bash
+    npm run dev
+```
+
+- Abra o navegador
+
+```bash
+    Navegue até http://localhost:3000 para visualizar o aplicativo.
+```
+
+## Estrutura do Projeto
+
+src/
+components/ # Componentes de UI reutilizáveis
+contexts/ # Contextos do React para gerenciamento de estado
+hooks/ # Hooks personalizados
+layouts/ # Componentes de layout, como AuthLayout e DashboardLayout
+pages/ # Componentes de página para diferentes rotas (ex: PatientsPage, SignInPage)
+routes/ # Definição das rotas do aplicativo
+sections/ # Views
+service/ # Serviços para interagir com APIs
+theme/ # Tema e estilos personalizados para o Material UI
+utils/ # Funções utilitárias
+
+## Roteamento
+
+- Rotas Protegidas (Acessíveis apenas quando autenticado)
+- / ou /paciente: Exibe a PatientsPage.
+- /paciente/novo: Mostra o formulário NewPatient.
+- /paciente/editar/:id: Abre o formulário EditPatient para o ID de paciente especificado.
+
+## Rotas Públicas
+
+- /entrar: Renderiza a SignInPage para login do usuário.
+- /404: Exibe o componente Page404 para rotas desconhecidas.
