@@ -16,14 +16,6 @@ Este é um aplicativo frontend baseado em React para gerenciar informações de 
 - Página 404: Página de erro amigável para rotas indefinidas.
 - Design Responsivo: Componentes de UI compatíveis com dispositivos móveis.
 
-## Tecnologias Utilizadas
-
-- React: Biblioteca para construir interfaces de usuário.
-- React Router DOM: Roteamento declarativo para aplicativos React.
-- Material UI (MUI): Componentes React que implementam o Material Design do Google.
-- JavaScript (ES6+): Recursos modernos do JavaScript.
-- CSS-in-JS: Estilização de componentes usando JavaScript.
-
 ## Começando
 
 ### Pré-requisitos
