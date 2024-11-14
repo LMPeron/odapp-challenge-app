@@ -52,19 +52,6 @@ yarn
     Navegue até http://localhost:3039 para visualizar o aplicativo.
 ```
 
-## Estrutura do Projeto
-
-src/
-components/ # Componentes de UI reutilizáveis
-contexts/ # Contextos do React para gerenciamento de estado
-hooks/ # Hooks personalizados
-layouts/ # Componentes de layout, como AuthLayout e DashboardLayout
-pages/ # Componentes de página para diferentes rotas (ex: PatientsPage, SignInPage)
-routes/ # Definição das rotas do aplicativo
-sections/ # Views
-service/ # Serviços para interagir com APIs
-theme/ # Tema e estilos personalizados para o Material UI
-utils/ # Funções utilitárias
 
 ## Roteamento
 
