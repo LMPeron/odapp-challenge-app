@@ -55,7 +55,7 @@ yarn
 - Abra o navegador
 
 ```bash
-    Navegue até http://localhost:3000 para visualizar o aplicativo.
+    Navegue até http://localhost:3039 para visualizar o aplicativo.
 ```
 
 ## Estrutura do Projeto
